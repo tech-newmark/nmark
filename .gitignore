@@ -1,0 +1,30 @@
+# Bitrix files
+/bitrix/*
+/bitrix/cache/
+/bitrix/managed_cache/
+/bitrix/stack_cache/
+/bitrix/backup/
+/bitrix/updates/
+/bitrix/restore.php
+/upload/
+/local/logs/
+/local/php_interface/dbconn.php
+/node_modules/
+
+/local/templates/nmark/template_styles.css
+/local/templates/nmark/script.js
+
+# System files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+
+# IDE
+.vscode/*
+.idea/
+
+# frontend
+
+/local/frontend/node_modules/
+/local/frontend/dist/
