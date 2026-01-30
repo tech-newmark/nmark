@@ -1,0 +1,7 @@
+@use "@scss/_mixins/_font-face.scss" as *;
+
+@include font-face("Nunito Sans", "NunitoSans-Light", 300, normal);
+@include font-face("Nunito Sans", "NunitoSans-Regular", 400, normal);
+@include font-face("Nunito Sans", "NunitoSans-Medium", 500, normal);
+@include font-face("Nunito Sans", "NunitoSans-Bold", 700, normal);
+@include font-face("Nunito Sans", "NunitoSans-ExtraBold", 800, normal);
