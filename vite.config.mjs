@@ -270,6 +270,7 @@ export default defineConfig({
   resolve: {
     alias: {
       "@scss": path.resolve(__dirname, `${TEMPLATE_PATH}/__vite__/scss`),
+      "@fonts": path.resolve(__dirname, `${TEMPLATE_PATH}/__vite__/fonts`),
       "@img": path.resolve(__dirname, `${TEMPLATE_PATH}/__vite__/images`),
     },
   },

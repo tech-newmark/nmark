@@ -9,7 +9,8 @@
 
   --primary: #00a5f5;
 
-  --dark: #001822;
+  --info: #001822;
+
   --light: #f7f9fc;
   --danger: #c9706f;
   --success: green;
@@ -19,7 +20,7 @@
 // containers
 :root {
   --content-width: 1440px;
-  --container-offset: clamp(10px, 2vw, 60px);
+  --container-offset: clamp(20px, 2vw, 60px);
   --container-width: calc(var(--content-width) + (var(--container-offset) * 2));
   --content-fluid-width: 1920px;
   --container-fluid-offset: 0;
@@ -61,8 +62,7 @@
 
 // utils
 :root {
-  --base-border-radius: 15px;
+  --base-border-radius: 30px;
   --border-radius-sm: 10px;
-  --border-radius-lg: 30px;
-  --base-box-shadow: 5px 5px 20px #d4e4f4;
+  --border-radius-md: 20px;
 }

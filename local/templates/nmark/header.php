@@ -23,6 +23,6 @@
 <body>
 
     <? $APPLICATION->ShowPanel() ?>
-    <header>header</header>
+    <header class="header">header</header>
     <main class="workarea">
         workarea
