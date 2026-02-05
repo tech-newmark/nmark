@@ -24,8 +24,9 @@ Thumbs.db
 .vscode/*
 .idea/
 
-
 # frontend
 
 /local/frontend/node_modules/
 /local/frontend/dist/
+
+package-lock.json

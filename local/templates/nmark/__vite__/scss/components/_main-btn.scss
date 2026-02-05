@@ -6,57 +6,56 @@
   justify-content: center;
   width: fit-content;
   min-width: 150px;
-  padding: 12px clamp(16px, 3vw, 24px);
   min-height: 48px;
-  font-size: clamp(16px, 2.4vw, 18px);
-  font-weight: 600;
+  padding: clamp(12px, 2vw, 18px) clamp(16px, 3vw, 40px);
+  background-color: var(--primary);
   border: 1px solid transparent;
-  border-radius: var(--base-border-radius);
-  background-color: transparent;
+  border-radius: var(--border-radius-xl);
   color: var(--white);
-  background-color: var(--secondary);
-  box-shadow: none;
-  transition:
-    box-shadow var(--main-transition),
-    background-color var(--main-transition),
-    color var(--main-transition),
-    border-color var(--main-transition);
+  font-weight: 700;
+  font-size: clamp(18px, 2.6vw, 20px);
+  line-height: 1;
+  font-family: var(--primary-font);
 
-  &--outlined {
-    border-color: var(--secondary);
-    color: var(--secondary);
-    background-color: transparent;
-
-    svg {
-      fill: var(--secondary);
-    }
+  &--secondary {
+    background-color: var(--info);
   }
+}
 
-  @media (hover: hover) {
-    &.main-btn--outlined:hover {
-      color: var(--white);
-      background-color: var(--secondary);
+.doubled-btn {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  min-height: 48px;
+  border: 1px solid transparent;
+  background-color: transparent;
+  padding: 0;
 
-      svg {
-        fill: var(--white);
-      }
-    }
-
-    &:hover {
-      box-shadow: var(--base-box-shadow);
-    }
-  }
-
-  &.main-btn--outlined:focus {
+  span:first-child {
+    padding: clamp(12px, 2vw, 18px) clamp(16px, 3vw, 40px);
+    font-family: var(--primary-font);
+    font-size: clamp(18px, 2.6vw, 20px);
+    line-height: 1;
+    font-weight: 700;
+    background-color: var(--info);
     color: var(--white);
-    background-color: var(--secondary);
-
-    svg {
-      fill: var(--white);
-    }
+    border-radius: var(--border-radius-xl);
   }
 
-  &:focus {
-    box-shadow: var(--base-box-shadow);
+  span:last-child {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    aspect-ratio: 1;
+    width: auto;
+    background-color: var(--primary);
+    border-radius: 50%;
+
+    svg {
+      width: 26px;
+      height: 26px;
+      fill: var(--white);
+      transform: rotate(-45deg);
+    }
   }
 }

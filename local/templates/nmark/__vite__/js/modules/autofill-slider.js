@@ -5,6 +5,8 @@ import { Navigation, Pagination } from "swiper/modules";
 
 const sliders = document.querySelectorAll(".autofill-slider");
 
+console.log(sliders);
+
 if (sliders.length) {
   sliders.forEach((slider) => {
     const pagination = slider.querySelector(".swiper-pagination");
@@ -29,4 +31,4 @@ if (sliders.length) {
   });
 }
 
-console.log("test2");
+
