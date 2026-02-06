@@ -13,29 +13,19 @@
 $this->setFrameMode(true);
 ?>
 
-<section class="base-section advantages">
+<section class="base-section faq">
 	<div class="container">
 		<div class="base-section__header">
-			<div class="base-section__header-main">
-				<span class="base-text base-section__headline">
-					<?= $arResult['NAME'] ?>
-				</span>
-				<h2 class="base-title">
-					Почему <strong>выбирают</strong> нас
-				</h2>
-			</div>
-			<button class="double-btn">
-				<span>Связаться с нами</span>
-				<span><svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
-						<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
-					</svg>
-				</span>
-			</button>
+			<span class="base-text base-section__headline">
+				Наши преимущества
+			</span>
+			<h2 class="base-title">
+				Почему <strong>выбирают</strong> нас
+			</h2>
 		</div>
 
 
-		<div class="swiper autofill-slider">
-			<div class="swiper-wrapper">
+
 				<? foreach ($arResult["ITEMS"] as $arItem): ?>
 					<?
 					$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
@@ -47,7 +37,6 @@ $this->setFrameMode(true);
 								style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>)">
 							</div>
 						</div>
-					<? else: ?>
 						<div class="swiper-slide">
 							<div class="advantages__item">
 								<span class="advantages__item-name"><?= $arItem['NAME'] ?></span>
@@ -55,8 +44,7 @@ $this->setFrameMode(true);
 								<span class="advantages__item-desc"><?= $arItem['DETAIL_TEXT'] ?></span>
 							</div>
 						</div>
-					<? endif; ?>
-				<? endforeach; ?>
+
 			</div>
 		</div>
 		<? if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>

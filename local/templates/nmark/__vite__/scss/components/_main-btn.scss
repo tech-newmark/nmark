@@ -22,10 +22,10 @@
   }
 }
 
-.doubled-btn {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
+.double-btn {
+  display: grid;
+  grid-template-columns: auto auto;
+  width: fit-content;
   min-height: 48px;
   border: 1px solid transparent;
   background-color: transparent;
@@ -45,9 +45,11 @@
   span:last-child {
     display: flex;
     justify-content: center;
-    align-content: center;
+    align-items: center;
     aspect-ratio: 1;
     width: auto;
+    height: 100%;
+    max-width: fit-content;
     background-color: var(--primary);
     border-radius: 50%;
 

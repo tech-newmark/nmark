@@ -275,7 +275,3 @@ export default defineConfig({
     },
   },
 });
-
-
-console.log("Current config dir:", __dirname);
-console.log("COMPONENTS_PATH resolved:", path.resolve(COMPONENTS_PATH));
