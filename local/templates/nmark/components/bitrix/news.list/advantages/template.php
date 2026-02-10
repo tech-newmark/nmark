@@ -21,7 +21,7 @@ $this->setFrameMode(true);
 					<?= $arResult['NAME'] ?>
 				</span>
 				<h2 class="base-title">
-					Почему <strong>выбирают</strong> нас
+					Почему <b class="strong">выбирают</b> нас
 				</h2>
 			</div>
 			<button class="double-btn">
@@ -51,7 +51,7 @@ $this->setFrameMode(true);
 						<div class="swiper-slide">
 							<div class="advantages__item">
 								<span class="advantages__item-name"><?= $arItem['NAME'] ?></span>
-								<span class="advantages__item-value"><strong><?= $arItem['PREVIEW_TEXT'] ?></strong></span>
+								<span class="advantages__item-value"><strong class="strong"><?= $arItem['PREVIEW_TEXT'] ?></strong></span>
 								<span class="advantages__item-desc"><?= $arItem['DETAIL_TEXT'] ?></span>
 							</div>
 						</div>
@@ -59,9 +59,5 @@ $this->setFrameMode(true);
 				<? endforeach; ?>
 			</div>
 		</div>
-		<? if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>
-			<br /><?= $arResult["NAV_STRING"] ?>
-		<? endif; ?>
-
 	</div>
 </section>
