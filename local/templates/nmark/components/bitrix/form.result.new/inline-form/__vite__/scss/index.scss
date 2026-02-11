@@ -1,0 +1,118 @@
+@use "@scss/_mixins/container-queries" as *;
+
+.inline-form {
+  container: inline-form-container / inline-size;
+
+  position: relative;
+  padding: clamp(20px, 4vw, 40px);
+  border-radius: var(--base-border-radius);
+  overflow: hidden;
+
+  &--check {
+    color: var(--white);
+    background-color: var(--primary);
+
+    &::before {
+      content: "";
+      position: absolute;
+      top: 20%;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      mask-image: url("@img/icon-snowflake.svg");
+      background-color: var(--white);
+      mask-size: 640px;
+      mask-position: center top;
+      mask-repeat: no-repeat;
+      opacity: 0.15;
+    }
+
+    .strong {
+      color: var(--info);
+    }
+
+    .inline-form__body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(10px, 2.2vw, 20px);
+      margin-bottom: clamp(10px, 2vw, 20px);
+
+      @include container-up("inline-form-container", 550px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .main-input-wrapper {
+      input {
+        border: 1px solid var(--white);
+      }
+    }
+
+    .main-textarea-wrapper {
+      grid-column: 1/-1;
+    }
+
+    .main-btn {
+      grid-column: 1/-1;
+      width: 100%;
+      margin-top: clamp(10px, 2vw, 20px);
+      padding: clamp(12px, 1.6vw, 14px) clamp(16px, 3vw, 40px);
+    }
+  }
+
+  &--audit {
+    background-color: var(--light);
+
+    .inline-form__header {
+    }
+
+    .inline-form__body {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: clamp(10px, 2.2vw, 20px);
+      margin-bottom: clamp(10px, 2vw, 20px);
+
+      @include container-up("inline-form-container", 550px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .main-btn {
+      background-color: var(--primary);
+      width: 100%;
+      padding: clamp(12px, 1.6vw, 14px) clamp(16px, 3vw, 40px);
+    }
+
+    @include container-up("inline-form-container", 970px) {
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("@img/audit-form-bg.png");
+        background-position: right bottom;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .inline-form__header,
+      .inline-form__body {
+        max-width: 700px;
+      }
+    }
+  }
+
+  form {
+    position: relative;
+    z-index: 2;
+  }
+
+  &__note {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+}

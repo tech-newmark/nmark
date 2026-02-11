@@ -43,17 +43,13 @@ $this->setFrameMode(true);
 					?>
 					<? if (!empty($arItem['PREVIEW_PICTURE'])) : ?>
 						<div class="swiper-slide">
-							<div class="advantages__item advantages__item--image"
+							<div class="base-card"
 								style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>)">
 							</div>
 						</div>
 					<? else: ?>
 						<div class="swiper-slide">
-							<div class="advantages__item">
-								<span class="advantages__item-name"><?= $arItem['NAME'] ?></span>
-								<span class="advantages__item-value"><strong class="strong"><?= $arItem['PREVIEW_TEXT'] ?></strong></span>
-								<span class="advantages__item-desc"><?= $arItem['DETAIL_TEXT'] ?></span>
-							</div>
+							<? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site-blocks/partials/base-card/base-card.php"); ?>
 						</div>
 					<? endif; ?>
 				<? endforeach; ?>

@@ -73,7 +73,7 @@ $inner-padding: clamp(16px, 2.2vw, 20px);
       grid-template-rows var(--main-transition),
       opacity 0.1s var(--main-transition);
 
-    & > .content-block {
+    & > .content {
       margin: 0;
       overflow: hidden;
       transition: padding var(--main-transition);

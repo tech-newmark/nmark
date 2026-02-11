@@ -1,0 +1,43 @@
+@use "@scss/_mixins/container-queries" as *;
+
+.metrics {
+  container: metrics-container / inline-size;
+
+  .base-section__header {
+    @include container-up("metrics-container", 1000px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 1.8vw, 30px);
+
+    @include container-up("metrics-container", 400px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include container-up("metrics-container", 800px) {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+
+      &::after {
+        content: "";
+        grid-column: 3/4;
+        grid-row: 1/-1;
+        background-image: url("@img/metrics-bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        border-radius: var(--border-radius-md);
+      }
+    }
+  }
+
+  .base-card {
+    min-height: 350px;
+  }
+}

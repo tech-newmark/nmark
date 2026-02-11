@@ -1,0 +1,42 @@
+.base-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: clamp(20px, 4.5vw, 30px) clamp(20px, 6vw, 30px);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--light);
+  border-radius: var(--border-radius-md);
+  overflow: hidden;
+
+  &__name {
+    display: flex;
+    gap: 8px;
+    margin-bottom: auto;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+
+    &::before {
+      content: "";
+      min-width: 16px;
+      height: 16px;
+      mask-image: url("@img/icon-sun.svg");
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      background-color: var(--primary);
+    }
+  }
+
+  &__value {
+    font-size: 64px;
+    line-height: 72px;
+  }
+
+  &__desc {
+    font-size: 16px;
+    line-height: 18px;
+  }
+}
