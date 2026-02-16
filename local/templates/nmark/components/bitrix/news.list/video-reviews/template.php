@@ -54,7 +54,7 @@ $this->setFrameMode(true);
 							<ul>
 								<? if (!empty($arItem["PROPERTIES"]["CATEGORY"]["VALUE"])): ?>
 									<? foreach ($arItem["PROPERTIES"]["CATEGORY"]["VALUE"] as $arCategory) : ?>
-										<li><span>#<?= $arCategory ?></span></li>
+										<li><span><?= $arCategory ?></span></li>
 									<? endforeach; ?>
 								<? endif; ?>
 							</ul>
