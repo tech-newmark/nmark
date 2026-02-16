@@ -32,20 +32,23 @@ $this->setFrameMode(true);
 				</span>
 			</button>
 		</div>
-		<div class="metrics__grid">
+		<div class="grid">
+			<div class="grid__item">
+				<img src="<?= $templateFolder ?>/images/profit.jpg " alt="" width="477" height="389">
+			</div>
 			<? foreach ($arResult["ITEMS"] as $arItem): ?>
 				<?
 				$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 				$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
 				?>
-				<? if (!empty($arItem['PREVIEW_PICTURE'])) : ?>
-					<div class="base-card"
-						style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>)">
-					</div>
-				<? else: ?>
+				<div class="grid__item">
 					<? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site-blocks/partials/base-card/base-card.php"); ?>
-				<? endif; ?>
+				</div>
 			<? endforeach; ?>
+			<div class="grid__item grid__item--aside">
+				<img src="<?= CFile::GetPath($arResult['PICTURE']) ?>" alt="" width="480" height="820">
+			</div>
+
 		</div>
 	</div>
 </section>

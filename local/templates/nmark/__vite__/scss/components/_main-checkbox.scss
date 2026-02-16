@@ -5,16 +5,15 @@
     position: relative;
     display: flex;
     align-items: center;
-    gap: 8px;
+    padding-left: 34px;
     font-family: var(--site-base-font-family);
-    font-size: clamp(16px, 2.2vw, 18px);
     font-weight: 500;
     width: 100%;
     color: var(--dark);
     cursor: pointer;
 
     span {
-      font-size: 14px;
+      font-size: 16px;
       line-height: 1;
       text-align: left;
       color: var(--dark);
@@ -29,13 +28,17 @@
     }
 
     &::before {
-      position: relative;
+      position: absolute;
       content: "";
-      width: 16px;
-      height: 16px;
+      top: 50%;
+      left: 0;
+      transform: translate(0, -50%);
+      width: 20px;
+      height: 20px;
       aspect-ratio: 1/1;
-      border: 1px solid var(--secondary);
-      border-radius: 2px;
+      border: 1px solid var(--primary);
+      border-radius: 4px;
+      background-color: transparent;
     }
   }
 
@@ -44,10 +47,23 @@
   }
 
   &:has(input:checked) label::before {
-    background-image: url("@img/icon-checkbox.svg");
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: 12px;
+    background-color: var(--primary);
+  }
+
+  &:has(input:checked) label::after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    left: 2px;
+    transform: translate(0, -50%);
+    width: 16px;
+    height: 16px;
+    aspect-ratio: 1/1;
+    mask-image: url("@img/icon-checkbox.svg");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 16px;
+    background-color: var(--white);
   }
 
   /* purgecss start ignore */

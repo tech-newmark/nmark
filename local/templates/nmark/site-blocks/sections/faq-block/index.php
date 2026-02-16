@@ -7,7 +7,7 @@ Asset::getInstance()->addCss(SITE_TEMPLATE_PATH . "/site-blocks/sections/faq-blo
 
 <div class="base-section faq-block">
     <div class="container">
-        <div class="base-section-grid">
+        <div class="grid">
             <!-- FAQ -->
             <section class="faq">
                 <? $APPLICATION->IncludeComponent(

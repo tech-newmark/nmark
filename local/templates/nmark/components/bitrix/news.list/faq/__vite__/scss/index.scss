@@ -3,14 +3,6 @@
 .advantages {
   container: advantages-container / inline-size;
 
-  .base-section__header {
-    @include container-up("advantages-container", 1000px) {
-      flex-direction: row;
-      align-items: center;
-      justify-content: space-between;
-    }
-  }
-
   .swiper {
     &-slide {
       max-width: 240px;

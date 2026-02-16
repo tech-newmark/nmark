@@ -36,6 +36,14 @@ if (!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED !== true) die();
 						</label>
 					</div>
 				<? endif; ?>
+				<? if ($arQuestion["STRUCTURE"][0]["FIELD_TYPE"] == "checkbox"): ?>
+					<div class="main-checkbox-wrapper <?= ($arResult["FORM_ERRORS"][$FIELD_SID] ? 'invalid-fld' : '') ?>">
+						<input type="checkbox" id="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>" name="form_checkbox_<?= $FIELD_SID ?>[]" value="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
+						<label class="main-checkbox" for="<?= $arQuestion["STRUCTURE"][0]["ID"] ?>">
+							<span><?= $arQuestion["CAPTION"] ?></span>
+						</label>
+					</div>
+				<? endif; ?>
 			<? endforeach; ?>
 
 			<? if ($arResult["isUseCaptcha"] == "Y"): ?>

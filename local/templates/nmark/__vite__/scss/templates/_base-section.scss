@@ -9,16 +9,23 @@ $base-section-header-offset: clamp(20px, 3.6vw, 40px);
   &__header {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 20px 40px;
     margin-bottom: $base-section-header-offset;
+
+    &:has(.base-section__header-main) {
+      @media (min-width: 1100px) {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
 
     &-main {
       display: flex;
       flex-direction: column;
       gap: 20px;
 
-      @include container-up("base-section-container", 1000px) {
-        max-width: 600px;
+      @include container-up("base-section-container", 1100px) {
+        max-width: 60%;
       }
     }
 

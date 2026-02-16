@@ -1,0 +1,74 @@
+.video-reviews {
+  .swiper-slide {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(20px, 2vw, 30px);
+    max-width: 240px;
+    height: auto;
+    padding: clamp(20px, 3vw, 40px);
+    background-color: var(--light);
+    border-radius: 30px;
+
+    @media (min-width: 740px) {
+      max-width: 320px;
+    }
+
+    @media (min-width: 1200px) {
+      max-width: 400px;
+    }
+
+    a {
+      position: relative;
+
+      &::before {
+        position: absolute;
+        content: "";
+        width: 60px;
+        height: 60px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-image: url("@img/icon-play.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      }
+    }
+  }
+
+  img {
+    object-fit: contain;
+    border-radius: 30px;
+    aspect-ratio: 5/4;
+    width: 100%;
+    height: auto;
+  }
+
+  &__item-content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 14px;
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 4px;
+
+    span {
+      color: var(--primary);
+      font-size: 16px;
+    }
+  }
+
+  h3 {
+    margin: 0;
+    margin-top: auto;
+    font-size: clamp(20px, 3.4vw, 24px);
+    font-weight: 400;
+  }
+}

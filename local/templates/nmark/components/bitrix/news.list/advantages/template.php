@@ -33,26 +33,22 @@ $this->setFrameMode(true);
 			</button>
 		</div>
 
-
-		<div class="swiper autofill-slider">
-			<div class="swiper-wrapper">
-				<? foreach ($arResult["ITEMS"] as $arItem): ?>
-					<?
-					$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-					$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-					?>
-					<? if (!empty($arItem['PREVIEW_PICTURE'])) : ?>
-						<div class="swiper-slide">
-							<div class="base-card"
-								style="background-image: url(<?= $arItem['PREVIEW_PICTURE']['SRC'] ?>)">
-							</div>
-						</div>
-					<? else: ?>
-						<div class="swiper-slide">
+		<div class="advantages__list">
+			<div class="swiper autofill-slider">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img src="<?= CFile::GetPath($arResult['PICTURE']) ?>" alt="" width="240" height="198">
+					</div>
+					<? foreach ($arResult["ITEMS"] as $index => $arItem): ?>
+						<?
+						$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+						$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+						?>
+						<div class="swiper-slide<?= ($index % 2 !== 0) ? ' swiper-slide--odd' : null ?>">
 							<? include($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site-blocks/partials/base-card/base-card.php"); ?>
 						</div>
-					<? endif; ?>
-				<? endforeach; ?>
+					<? endforeach; ?>
+				</div>
 			</div>
 		</div>
 	</div>

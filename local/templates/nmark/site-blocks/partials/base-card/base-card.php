@@ -6,7 +6,9 @@ $stylesIncluded['base-card'] = true;
 ?>
 
 <div class="base-card">
-    <span class="base-card__name"><?= $arItem['NAME'] ?></span>
-    <span class="base-card__value"><strong class="strong"><?= $arItem['PREVIEW_TEXT'] ?></strong></span>
-    <span class="base-card__desc"><?= $arItem['DETAIL_TEXT'] ?></span>
+    <p class="base-card__name"><?= $arItem['NAME'] ?></p>
+    <p class="base-card__desc">
+        <strong class="strong"><?= $arItem['PREVIEW_TEXT'] ?></strong>
+        <?= $arItem['DETAIL_TEXT'] ?>
+    </p>
 </div>

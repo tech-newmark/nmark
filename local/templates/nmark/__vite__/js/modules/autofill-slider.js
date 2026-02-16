@@ -1,11 +1,9 @@
 import Swiper from "swiper";
-import { Navigation, Pagination } from "swiper/modules";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
 // import "swiper/css";
 // import "swiper/css/pagination";
 
 const sliders = document.querySelectorAll(".autofill-slider");
-
-console.log(sliders);
 
 if (sliders.length) {
   sliders.forEach((slider) => {
@@ -14,9 +12,21 @@ if (sliders.length) {
     const btnPrev = slider.querySelector(".swiper-button-prev");
 
     new Swiper(slider, {
-      modules: [Navigation, Pagination],
+      modules: [Navigation, Pagination, Autoplay],
       slidesPerView: "auto",
       spaceBetween: 20,
+      loop: true,
+
+      autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+      },
+
+      breakpoints: {
+        740: {
+          spaceBetween: 40,
+        },
+      },
 
       navigation: {
         nextEl: btnNext ? btnNext : null,

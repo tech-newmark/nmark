@@ -1,15 +1,22 @@
-.base-section-grid {
+.faq-block .grid {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr;
+  align-items: start;
   gap: 40px;
 }
 
 @media (min-width: 1000px) {
-  .base-section-grid {
+  .faq-block .grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .faq {
     order: 2;
+  }
+
+  .check-form {
+    position: sticky;
+    top: 0;
   }
 }
