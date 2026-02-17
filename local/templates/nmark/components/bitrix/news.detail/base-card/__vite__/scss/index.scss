@@ -1,0 +1,45 @@
+.base-card {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100%;
+  padding: clamp(20px, 4.5vw, 30px) clamp(20px, 6vw, 30px);
+  background-color: var(--light);
+
+  &__name {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 0;
+    font-size: 14px;
+    line-height: 16px;
+    font-weight: 700;
+
+    &::before {
+      content: "";
+      min-width: 16px;
+      height: 16px;
+      mask-image: url("@img/icon-sun.svg");
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      background-color: var(--primary);
+    }
+  }
+
+  &__desc {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(10px, 2vw, 20px);
+    margin-top: auto;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0;
+    margin-top: auto;
+  }
+
+  strong {
+    font-size: clamp(48px, 5vw, 64px);
+    line-height: 1.2;
+  }
+}

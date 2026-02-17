@@ -7,11 +7,6 @@
   background-color: var(--light);
 }
 
-.base-card strong {
-  font-size: clamp(48px, 5vw, 64px);
-  line-height: 1.2;
-}
-
 .base-card__name {
   display: flex;
   align-items: center;
@@ -42,4 +37,9 @@
   line-height: 18px;
   margin: 0;
   margin-top: auto;
+}
+
+.base-card strong {
+  font-size: clamp(48px, 5vw, 64px);
+  line-height: 1.2;
 }
