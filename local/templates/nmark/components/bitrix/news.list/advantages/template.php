@@ -17,7 +17,7 @@ $this->setFrameMode(true);
 	<div class="container">
 		<div class="base-section__header">
 			<div class="base-section__header-main">
-				<span class="base-text base-section__headline">
+				<span class="base-section__headline">
 					<?= $arResult['NAME'] ?>
 				</span>
 				<h2 class="base-title">

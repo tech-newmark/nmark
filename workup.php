@@ -3,6 +3,7 @@ require($_SERVER["DOCUMENT_ROOT"] . "/bitrix/header.php");
 $APPLICATION->SetTitle("Мебельная компания");
 ?>
 
+
 <? include_once($_SERVER["DOCUMENT_ROOT"] . SITE_TEMPLATE_PATH . "/site-blocks/sections/cooperation/index.php");  ?>
 
 <? $APPLICATION->IncludeComponent(
