@@ -1,0 +1,167 @@
+@use "@scss/_mixins/container-queries" as *;
+
+.top-banners {
+  container: top-banners-container / inline-size;
+
+  .swiper-slide {
+    height: auto;
+  }
+
+  .grid {
+    display: grid;
+    gap: 20px;
+    height: 100%;
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+
+      &--content {
+        ul {
+          flex-direction: row;
+          flex-wrap: wrap;
+          row-gap: 10px;
+          column-gap: 40px;
+
+          li {
+            width: fit-content;
+          }
+        }
+
+        div {
+          -webkit-line-clamp: 3;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+          font-size: clamp(16px, 1.6vw, 18px);
+        }
+      }
+
+      &--img {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--base-border-radius);
+
+        &::before {
+          position: absolute;
+          top: 0;
+          left: 0;
+          transform: translate(-15%, -20%);
+          width: 25%;
+          height: 25%;
+          content: "";
+          background-image: url("@img/icon-snowflake.svg");
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+
+        div {
+          display: flex;
+          justify-content: center;
+          border-radius: var(--base-border-radius);
+          background-color: var(--light);
+        }
+
+        img {
+          position: relative;
+          max-width: 600px;
+        }
+      }
+
+      &--metric {
+        ul {
+          display: grid;
+          grid-template-columns: repeat(auto-fill, 290px);
+          gap: 20px;
+          width: 100%;
+          margin: 0;
+          padding: clamp(30px, 6vw, 40px) clamp(20px, 5vw, 30px);
+
+          li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            width: fit-content;
+
+            img {
+              width: clamp(32px, 2vw, 40px);
+            }
+
+            div:first-child {
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              border-radius: 50%;
+              aspect-ratio: 1;
+              padding: clamp(10px, 1.4vw, 14px);
+
+              background-color: var(--primary);
+            }
+
+            div:last-child {
+              display: flex;
+              flex-direction: column;
+              gap: 10px;
+
+              span {
+                font-size: 24px;
+              }
+
+              strong {
+                font-size: 32px;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: auto;
+      font-size: 20px;
+
+      svg {
+        width: 16px;
+        height: 16px;
+        fill: var(--primary);
+      }
+    }
+  }
+
+  @include container-up("top-banners-container", 1000px) {
+    .swiper {
+      margin-top: -60px;
+    }
+
+    .grid {
+      grid-template-columns: 3.5fr 2.5fr;
+      grid-template-rows: 1fr auto;
+
+      &-item {
+        &--content {
+          margin-top: 40px;
+        }
+
+        &--img {
+          grid-column: 2/3;
+          grid-row: 1/3;
+
+          div {
+            height: auto;
+          }
+        }
+
+        &--metric {
+          grid-column: 1/3;
+          grid-row: 2/3;
+          z-index: 2;
+          max-width: 1000px;
+        }
+      }
+    }
+  }
+}

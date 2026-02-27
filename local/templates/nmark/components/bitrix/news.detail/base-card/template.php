@@ -14,6 +14,8 @@ $this->setFrameMode(true);
 ?>
 
 <div class="base-card">
-	<p class="base-card__name"><?= $arItem['NAME'] ?></p>
-	<p class="base-card__desc"><?= $arItem['PREVIEW_TEXT'] ?></p>
+	<p class="base-card__name"><?= $arResult['NAME'] ?></p>
+	<? if ($arResult['PREVIEW_TEXT']) : ?>
+		<p class="base-card__desc"><?= $arResult['PREVIEW_TEXT'] ?></p>
+	<? endif; ?>
 </div>

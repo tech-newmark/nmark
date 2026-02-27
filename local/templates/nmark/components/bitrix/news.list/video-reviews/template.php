@@ -13,57 +13,60 @@
 $this->setFrameMode(true);
 ?>
 
-<section class="base-section video-reviews">
-	<div class="container">
-		<div class="base-section__header">
-			<div class="base-section__header-main">
-				<span class="base-section__headline">
-					<?= $arResult['NAME'] ?>
-				</span>
-				<h2 class="base-title">
-					Наш <b class="strong">RUTUBE</b> канал
-				</h2>
+<? if ($arResult["ITEMS"]): ?>
+	<section class="base-section video-reviews">
+		<div class="container">
+			<div class="base-section__header">
+				<div class="base-section__header-main">
+					<span class="base-section__headline">
+						<?= $arResult['NAME'] ?>
+					</span>
+					<h2 class="base-title">
+						Наш <b class="strong">RUTUBE</b> канал
+					</h2>
+				</div>
+				<a class="double-btn" href="#" target="_blank" rel="nofollow noopener noreferrer">
+					<span>Перейти</span>
+					<span><svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
+							<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
+						</svg>
+					</span>
+				</a>
 			</div>
-			<a class="double-btn" href="#" target="_blank" rel="nofollow noopener noreferrer">
-				<span>Перейти</span>
-				<span><svg width="24" height="24" role="img" aria-hidden="true" focusable="false">
-						<use xlink:href="<?= SITE_TEMPLATE_PATH ?>/assets/sprite.svg#icon-arrow"></use>
-					</svg>
-				</span>
-			</a>
-		</div>
-		<div class="swiper autofill-slider">
-			<div class="swiper-wrapper">
+			<div class="swiper autofill-slider">
+				<div class="swiper-wrapper">
 
-				<? foreach ($arResult["ITEMS"] as $arItem): ?>
-					<?
-					$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
-					$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-					?>
-					<div class="swiper-slide">
+					<? foreach ($arResult["ITEMS"] as $arItem): ?>
+						<?
+						$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
+						$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
+						?>
+						<? if ($arItem["DISPLAY_PROPERTIES"]["VIDEO"]["FILE_VALUE"]["SRC"]): ?>
+							<div class="swiper-slide">
+								<a
+									href="<?= $arItem["DISPLAY_PROPERTIES"]["VIDEO"]["FILE_VALUE"]["SRC"] ?>"
+									data-fancybox="video-reviews">
+									<? if (!empty($arItem["PREVIEW_PICTURE"]["SRC"])): ?>
+										<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="Видео-превью" width="350" height="280" loading="lazy">
+									<? endif; ?>
+								</a>
 
-						<a
-							href="<?= $arItem["DISPLAY_PROPERTIES"]["VIDEO"]["FILE_VALUE"]["SRC"] ?>"
-							data-fancybox="video-reviews">
-							<? if (!empty($arItem["PREVIEW_PICTURE"]["SRC"])): ?>
-								<img src="<?= $arItem["PREVIEW_PICTURE"]["SRC"] ?>" alt="Видео-превью" width="350" height="280" loading="lazy">
-							<? endif; ?>
-						</a>
+								<div class="video-reviews__item-content">
+									<ul>
+										<? if (!empty($arItem["PROPERTIES"]["CATEGORY"]["VALUE"])): ?>
+											<? foreach ($arItem["PROPERTIES"]["CATEGORY"]["VALUE"] as $arCategory) : ?>
+												<li><span><?= $arCategory ?></span></li>
+											<? endforeach; ?>
+										<? endif; ?>
+									</ul>
+									<h3><?= $arItem["NAME"] ?></h3>
+								</div>
 
-						<div class="video-reviews__item-content">
-							<ul>
-								<? if (!empty($arItem["PROPERTIES"]["CATEGORY"]["VALUE"])): ?>
-									<? foreach ($arItem["PROPERTIES"]["CATEGORY"]["VALUE"] as $arCategory) : ?>
-										<li><span><?= $arCategory ?></span></li>
-									<? endforeach; ?>
-								<? endif; ?>
-							</ul>
-							<h3><?= $arItem["NAME"] ?></h3>
-						</div>
-
-					</div>
-				<? endforeach; ?>
+							</div>
+						<? endif; ?>
+					<? endforeach; ?>
+				</div>
 			</div>
 		</div>
-	</div>
-</section>
+	</section>
+<? endif; ?>

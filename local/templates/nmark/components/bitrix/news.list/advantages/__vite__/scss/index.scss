@@ -17,11 +17,10 @@
         transform: translate(-50%, -50%);
         width: 104px;
         height: 104px;
-        background-color: var(--primary);
-        mask-image: url("@img/icon-snowflake.svg");
-        mask-position: center;
-        mask-repeat: no-repeat;
-        mask-size: contain;
+        background-image: url("@img/icon-snowflake.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
         z-index: 2;
       }
     }

@@ -1,0 +1,1 @@
+const e=document.querySelector(".price .main-toggle-wrapper"),l=document.querySelectorAll(".price .swiper-slide");console.log(e,l);if(e&&l.length){const o=()=>{l.forEach(t=>{t.classList.toggle("active"),t.classList.toggle("visually-hidden")})};e.addEventListener("change",o)}

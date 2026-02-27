@@ -1,0 +1,47 @@
+.animated-border {
+  position: relative;
+  border-radius: 30px;
+  z-index: 1;
+  background-color: var(--light);
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 30px;
+    padding: clamp(6px, 1.6vw, 10px); /* Толщина бордера */
+    background: conic-gradient(
+      from var(--angle),
+      var(--lightblue) 25%,
+      var(--primary),
+      var(--lightblue) 100%
+    );
+    --angle: 0deg;
+    animation: rotate 14s linear infinite;
+
+    /* Вырезаем внутреннюю часть — остаётся только бордер */
+    -webkit-mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    mask:
+      linear-gradient(#fff 0 0) content-box,
+      linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+
+    pointer-events: none;
+  }
+}
+
+@keyframes rotate {
+  to {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
